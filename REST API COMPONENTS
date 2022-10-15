@@ -1,0 +1,25 @@
+
+REST API Endpoint 
+An endpoint is the URI where you send an HTTP request. The path of an endpoints can include notable information.
+An API provider can make an endpoint URI private and accessible only through a VPN or can make it completely public on the Internet.
+
+
+
+REST API Parameters
+Parameters often provide details so that you can scope, filter, or clarify a request. These parameters are usually optional. 
+They can streamline your request or enable you to retrieve information page-by-page.
+
+For example, looking at the Deck of Cards API, you use the /deck/new/shuffle resource to shuffle the deck of cards. Optionally, to specify the number of decks you want to shuffle, you add the ?deck_count= parameter to the request. If left unspecified, this parameter has a default value of 1. However, suppose you are playing Blackjack and want to shuffle six decks of cards, you would add ?deck_count=6 to the path.
+
+https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=6
+
+
+
+REST API Data Formats
+When sending a request, data formats are also called payloads. Refer to the REST API Documentation for your product to learn if it supports JSON and XML as data formats.
+
+JSON stands for JavaScript Object Notation. It's a lightweight text-based open standard designed for human-readable data interchange. You can read more about it at http://www.json.org/. Many REST APIs work with JSON.
+
+XML stands for eXtensible Markup Language. It is a language designed to store and transport data.
+
+For each data format, the data may be contained in the body of the request. POST, PUT, and PATCH requests typically include data requirements or optional parameters as part of the request. As a pattern to recognize, GET responses nearly always include data.
