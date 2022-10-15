@@ -1,0 +1,37 @@
+After you or your application send a request that contains the correct URI and verb, the service returns a status code. These status codes should be familiar to most browser users who have tried to load a missing page and seen 404 Not Found instead. A valid REST API request typically gets a 200 OK response, which indicates that the API received and understood the request. If the request wasn't valid, the response might be 404 Not Found. You can consult the REST API documentation for a complete list of the response codes you can expect.
+
+The following table describes common REST API statuses and their meanings.
+
+Status Code	Status Message	Meaning
+200	OK	All looks good
+201	Created	New resource created
+400	Bad Request	Request was invalid
+401	Unauthorized	Authentication missing or incorrect
+403	Forbidden	Request was understood but not allowed
+404	Not Found	Resource not found
+500	Internal Server Error	Something wrong with the server
+503	Service Unavailable	Server is unable to complete request
+
+
+
+You can include protocol response headers in the output with the -i for --include option with curl. Notice, the first line is the 200 OK message.
+
+
+# curl --include https://uselessfacts.jsph.pl/random.json 
+
+HTTP/2 200 
+server: nginx
+content-type: application/json; charset=utf-8
+vary: Accept-Encoding
+cache-control: no-cache, private
+date: Wed, 27 Jul 2022 20:31:59 GMT
+x-ratelimit-limit: 30
+x-ratelimit-remaining: 30
+access-control-allow-origin: *
+access-control-allow-methods: POST, GET, OPTIONS, PUT, DELETE
+access-control-allow-headers: Content-Type, Authorization
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+x-ua-compatible: IE=Edge
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
