@@ -1,0 +1,31 @@
+REST stands for REpresentational State Transfer, but REST is just another use for the HTTP Protocol. 
+A REST API service sends all requests and responses over TCP/TLS connections using text. 
+
+
+Example: 
+
+GET /v1/people/me HTTP/2
+Host: webexapis.com
+Authorization: Bearer <redacted>
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36
+
+
+$ curl -i --header "Authorization: Bearer $TOKEN" https://webexapis.com/v1/people/me
+date: Wed, 24 Mar 2021 21:00:30 GMT
+content-type: application/json;charset=UTF-8
+cache-control: no-cache, no-store
+via: 1.1 linkerd
+trackingid: ROUTER_605AC86E-4B16-01BB-03D6-AC12F9A403D6
+server: Redacted
+vary: accept-encoding
+strict-transport-security: max-age=63072000; includeSubDomains; preload 
+
+
+REST is an API framework that is built on HTTP, and the interface points are often for web services. When you combine REST and API, you see a simple service interface that enables applications or people to use the HTTP protocol to request objects or information.
+
+RESTful design has gained popularity because it meets performance needs, scales well, is simple to write and consume, and is reliable.
+
+The REST API flow manages both requests and responses. The application sends a request using a standard verb, such as GET, to an endpoint that is running a web service that understands that request. The application gets a standard HTTP response from the service's endpoint with a status code, headers. The response can also include a data payload.

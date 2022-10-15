@@ -1,0 +1,7 @@
+An API (Application Programming Interface) enables two pieces of software to communicate with each other. Think about the different ways you interface with software: You might open a mobile application to access your email. You might have a specific workflow to open messages, and file them away for later. Each of these workflows has a distinct "interface" or way in which you achieve a particular task.
+
+An API is similar in concept. Instead of humans interfacing with software, the application interfaces with another application service. Rather than having a human point and click through a workflow, an API exposes functionality to another application.
+
+Creating APIs enables the development of rich applications with a wide range of functionality. For example, suppose you create a restaurant recommendation app. When users search for a restaurant, you want the app to return a list of relevant restaurants including a map of where they are. Would you create this functionality without existing data or some sort of starting framework? No, you look for interfaces for restaurant data and mapping data.
+
+Creating that mapping capability might be slow, risky, and distract you from your core expertise, restaurants. Instead, you decide to use a third-party mapping capability. It's fast, inexpensive, and rock-solid. Now, your app can send a request to the map server's API and get map data in return.
