@@ -1,0 +1,67 @@
+for operation in OPERATIONS:
+
+      if operation['request_process']:
+
+        response = None
+        print(operation['request_method'])
+
+        # GET
+        if operation['request_method'] == "GET":
+            response = requests.get(
+                BURL + operation['resource_path'],
+                auth=AUTH
+                )
+
+        # POST
+        if operation['request_method'] == "POST":
+            response = requests.post(
+                BURL + operation['resource_path'],
+                data=json.dumps(operation['request_body']),
+                auth=AUTH
+                )
+
+        # PATCH
+        if operation['request_method'] == "PATCH":
+
+            # GET the Moid of the MO to PATCH
+            response = requests.get(
+                (
+                    BURL + operation['resource_path'] +
+                    "?$filter=Name eq '" + operation['resource_name'] + "'"
+                    ),
+                auth=AUTH
+                )
+
+            # Extract the Moid from the Results
+            json_result = json.loads(response.text)
+            moid = json_result["Results"][0]["Moid"]
+
+            response = requests.patch(
+                BURL + operation['resource_path'] + "/" + moid,
+                data=json.dumps(operation['request_body']),
+                auth=AUTH
+                )
+
+        # DELETE
+        if operation['request_method'] == "DELETE":
+
+            # GET the Moid of the MO to DELETE
+            response = requests.get(
+                (
+                    BURL + operation['resource_path'] +
+                    "?$filter=Name eq '" + operation['resource_name'] + "'"
+                    ),
+                auth=AUTH
+                )
+
+            # Extract the Moid from the Results
+            json_result = json.loads(response.text)
+            moid = json_result["Results"][0]["Moid"]
+
+            response = requests.delete(
+                BURL + operation['resource_path'] + "/" + moid,
+                auth=AUTH
+                )
+
+        print(response)
+        print(response.text)
