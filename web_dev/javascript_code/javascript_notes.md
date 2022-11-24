@@ -46,3 +46,23 @@ JavaScript has four comparison operators: <, <=, >, >=
 
 
 JavaScript has two "bottom" values: undefined and null. Some library functions prefer to return undefined to indicate the absence of a value. Others return null.
+
+
+Loops: 
+JavaScript has the classic three-part for loop of all languages that trace their heritage back to the C language.
+
+let items = ['Eggs', 'Spam', 'Hash browns', 'Salsa']
+for (let i = 1; i <= items.length; i++)
+   console.log(`${i}. ${items[i - 1]}`)
+
+for (const item of items) 
+   console.log(`* ${item}`)
+
+functions: 
+A function has input variables (or parameters) and produces a result (or return value). Here is an example:
+
+function average(x, y) {
+  return (x + y) / 2
+}
+average(6, 7)
+6.5
