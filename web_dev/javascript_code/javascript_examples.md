@@ -7,9 +7,23 @@ You can use strict mode in all your programs.
 
 A constant is a variable that never changes. You use the const keyword instead of let.
 
-const steps = require('./steps.js')
+const steps = require('./steps.js') to test the steps inside js code. 
 
 
 The parseInt and parseFloat functions convert strings to numbers.
 
 JavaScript has the usual + - * / operators that you know from other programming languages.
+
+String literals can be delimited with single quotes or double quotes, 'like this' or "like that".
+
+
+A JavaScript object is nothing like an object in an OO language such as C++ or Java. It is simply a set of properties, each with a name and value:
+
+Example:
+const harry = { name: 'Harry', age: 42 }
+
+Destructuring is a convenient way to get values out of an array or object. 
+
+An expression is made up of literals, variables, operators, and function calls. Every expression has a value.
+A statement (declaration, assignment, branch, loop, and so on) is executed for its effect. Statements don't have values.
+A Boolean value is either true or false. The name comes from the logician George Boole who discovered the laws of logic way back when.
